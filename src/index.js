@@ -1,5 +1,5 @@
 // import { Context } from "@actions/github/lib/context";
-import GitHub from "@actions/github";
+import { GitHub } from "@actions/github";
 // import core from "@actions/core";
 // import { context } from "@actions/github/lib/utils";
 
