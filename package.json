@@ -23,7 +23,8 @@
   },
   "homepage": "https://github.com/anorcle/next-pages#readme",
   "dependencies": {
-    "@actions/core": "^1.6.0"
+    "@actions/core": "^1.6.0",
+    "@actions/github": "^5.0.0"
   },
   "devDependencies": {
     "parcel-bundler": "^1.12.5"
