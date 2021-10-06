@@ -1,6 +1,8 @@
 // import { Context } from "@actions/github/lib/context";
 // import { context } from "@actions/github";
 const exec = require('@actions/exec');
+const deleteAllExcept = require("./modules/deleteAllExcept.js")
+
 // import core from "@actions/core";
 // import { context } from "@actions/github/lib/utils";
 
@@ -13,9 +15,11 @@ const main = async () => {
     await exec.exec('npm i');
     await exec.exec('npx next build');
     await exec.exec('npx next export');
-    await exec.exec('git filter-branch -f --prune-empty --subdirectory-filter out/ gh-pages');
-    await exec.exec('touch .nojekyll');
+    
+    await deleteAllExcept(['.git', 'out'])
+
     await exec.exec('ls');
+    await exec.exec('touch .nojekyll');
     await exec.exec('git config --global user.name "Anorcle"');
     await exec.exec('git config --global user.email "next-pages@anorcle.com"');
     await exec.exec('git add .');

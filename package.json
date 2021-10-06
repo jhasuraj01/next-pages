@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "Use this workflow in your Next Project to build and deploy your static sites on Github",
   "main": "./src/index.js",
-  "type": "module",
   "private": true,
   "scripts": {
     "build": "parcel build --no-source-maps --target=node --bundle-node-modules ./src/index.js"
