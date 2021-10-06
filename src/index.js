@@ -17,8 +17,8 @@ const main = async () => {
     await exec.exec('npx next export');
 
     await deleteAllExcept(['.git', 'out'])
-    
-    await exec.exec('mv  -v ./out/* .');
+
+    await exec.exec(' mv -v public/* ./');
     await exec.exec('touch .nojekyll');
     await exec.exec('ls');
     await exec.exec('git config --global user.name "Anorcle"');
