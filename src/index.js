@@ -16,7 +16,8 @@ const main = async () => {
     await exec.exec('npx next build');
     await exec.exec('npx next export');
 
-    await deleteAllExcept(['.git', 'out'])
+    // await deleteAllExcept(['.git', 'out'])
+    await exec.exec('rm -rf !(out)')
 
     await exec.exec('ls');
 
