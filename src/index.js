@@ -6,4 +6,4 @@ import { context } from "@actions/github";
 // Read the paths and remove trailing '/'
 // const outDir = core.getInput('outDir', { required: true }).replace(/\/+$/g, "")
 
-console.log(JSON.stringify(context))
+console.log(JSON.stringify(context, null, 4))
