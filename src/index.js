@@ -18,8 +18,11 @@ const main = async () => {
 
     await deleteAllExcept(['.git', 'out'])
 
-    await exec.exec(' mv -v public/* ./');
+    await exec.exec('ls');
+
+    await exec.exec(' mv -v out/* ./');
     await exec.exec('touch .nojekyll');
+    
     await exec.exec('ls');
     await exec.exec('git config --global user.name "Anorcle"');
     await exec.exec('git config --global user.email "next-pages@anorcle.com"');
