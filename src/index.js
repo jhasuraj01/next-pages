@@ -21,11 +21,11 @@ const main = async () => {
 
     await exec.exec('ls');
 
-    await exec.exec('cd ./out')
-    await exec.exec('ls')
-    await exec.exec('cd ../')
+    // await exec.exec('cd ./out')
+    // await exec.exec('ls')
+    // await exec.exec('cd ../')
 
-    await exec.exec(' mv -v out/* ./');
+    await exec.exec('mv -v out/* ./');
     await exec.exec('touch .nojekyll');
 
     await exec.exec('ls');
@@ -33,7 +33,7 @@ const main = async () => {
     await exec.exec('git config --global user.email "next-pages@anorcle.com"');
     await exec.exec('git add -A');
     await exec.exec('git commit -m "Test"');
-    await exec.exec('git push origin gh-pages');
+    await exec.exec('git push origin gh-pages -f');
 }
 
 main()
