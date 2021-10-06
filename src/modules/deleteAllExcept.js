@@ -1,17 +1,12 @@
 const fs = require('fs').promises
+const exec = require('@actions/exec');
 
 module.exports = async (except = []) => {
     const objects = await fs.readdir('./');
 
     for (const object of objects) {
-        const stat = await fs.stat(object);
         if (except.includes(object) === false) {
-            if (stat.isDirectory()) {
-                await fs.rmdir(object)
-            }
-            else {
-                await fs.rm(object)
-            }
+           exec.exec(`rm ${object} -r`)
         }
     }
 }
