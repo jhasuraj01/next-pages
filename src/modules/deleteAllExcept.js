@@ -1,6 +1,6 @@
 const fs = require('fs').promises
 
-export default async (except = []) => {
+module.exports = async (except = []) => {
     const objects = await fs.readdir('./');
 
     for (const object of objects) {

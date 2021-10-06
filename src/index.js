@@ -15,7 +15,7 @@ const main = async () => {
     await exec.exec('npm i');
     await exec.exec('npx next build');
     await exec.exec('npx next export');
-    
+
     await deleteAllExcept(['.git', 'out'])
 
     await exec.exec('ls');
