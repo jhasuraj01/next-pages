@@ -10,6 +10,7 @@ const exec = require('@actions/exec');
 // console.log(JSON.stringify(context, null, 4))
 const main = async () => {
     await exec.exec('git checkout -B gh-pages');
+    await exec.exec('npm i');
     await exec.exec('npx next build');
     await exec.exec('npx next export');
     await exec.exec('git filter-branch -f --prune-empty --subdirectory-filter out/ gh-pages');
